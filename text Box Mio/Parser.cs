@@ -204,6 +204,15 @@ namespace at.jku.ssw.cc
         /* Reads ahead one symbol. */
         static void Scan()
         {
+            //agrego el token y el latoken al treeview de la pestaña TOKENS
+            if (token != null)
+            {
+                System.Windows.Forms.TreeNode node = new System.Windows.Forms.TreeNode();
+                node.Text = "Token = " + token.str;
+                node.Nodes.Add("laToken =" + laToken.str);
+                Program1.form1.treeView2.Nodes.Add(node);
+            }
+
             token = laToken;
             laToken = Scanner.Next();
             //La 1° vez q se ejecuta, token queda con Token(1, 1), laToken con "class" (primer token del programa)
