@@ -208,9 +208,9 @@ namespace at.jku.ssw.cc
             if (token != null)
             {
                 System.Windows.Forms.TreeNode node = new System.Windows.Forms.TreeNode();
-                node.Text = "Token = " + token.str;
-                node.Nodes.Add("laToken =" + laToken.str);
-                Program1.form1.treeView2.Nodes.Add(node);
+                node.Text = "Token : " + token.str + " Kind: "+token.kind;
+                node.Nodes.Add("laToken :" + laToken.str + " Kind: " + token.kind);
+                Program1.form1.treeView2.Nodes.Insert(0, node);
             }
 
             token = laToken;
